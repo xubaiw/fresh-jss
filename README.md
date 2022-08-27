@@ -8,6 +8,7 @@ First add the registry to your project:
 
 ```js
 // utils/registry.ts
+
 import { createRegistry } from "https://deno.land/x/fresh-jss/mod.ts";
 const { registry, createUseStyles } = createRegistry();
 export { registry, createUseStyles }
@@ -18,6 +19,7 @@ Then use it in your routes, islands and components:
 ```js
 // routes/index.tsx
 /** @jsx h */
+
 import { h } from "preact";
 import { createUseStyles } from "../utils/registry.ts";
 
@@ -37,10 +39,9 @@ Finally add the registry to page template to enable SSR:
 
 ```js
 // routes/_app.tsx
-/** 
-  @jsx h
-  @jsxFrag Fragment
- */
+/** @jsx h */
+/** @jsxFrag Fragment */
+
 import { h, Fragment } from "preact";
 import { registry } from "../utils/registry.ts";
 import { Head } from "$fresh/runtime.ts";
