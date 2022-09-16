@@ -1,5 +1,8 @@
 import { IS_BROWSER } from "https://deno.land/x/fresh@1.0.2/runtime.ts";
 import jss, { SheetsRegistry, Styles, StyleSheetFactoryOptions, StyleSheet } from 'https://esm.sh/jss@10.9.2';
+import nested from 'https://esm.sh/jss-plugin-nested'
+
+jss.use(nested());
 
 export function createRegistry() {
   const registry = new SheetsRegistry();
