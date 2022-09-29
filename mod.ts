@@ -1,6 +1,10 @@
 import { IS_BROWSER } from "https://deno.land/x/fresh@1.0.2/runtime.ts";
 import jss, { SheetsRegistry, Styles, StyleSheetFactoryOptions, StyleSheet } from 'https://esm.sh/jss@10.9.2';
 
+export function addPlugin(plugin: any[]) {
+    jss.use(plugin());
+}
+
 export function createRegistry() {
   const registry = new SheetsRegistry();
   const createUseStyles = <Name extends string | number | symbol>(
